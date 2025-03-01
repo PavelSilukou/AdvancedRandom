@@ -157,10 +157,10 @@ namespace AdvancedRandom.TrueChance
             var trueChanceElement = _trueChancesList.Find(element => element.OriginalRange.Left <= chance 
                                                                      && element.OriginalRange.Right >= chance);
 
-            var t = new MathUtils().InverseLerp(trueChanceElement.OriginalRange.Left, 
+            var t = MathFUtils.InverseLerp(trueChanceElement.OriginalRange.Left, 
                                               trueChanceElement.OriginalRange.Right, 
                                             chance);
-            var trueChance = new MathUtils().Lerp(trueChanceElement.TrueRange.Left, 
+            var trueChance = MathFUtils.Lerp(trueChanceElement.TrueRange.Left, 
                                                 trueChanceElement.TrueRange.Right, 
                                                   t);
             return trueChance;

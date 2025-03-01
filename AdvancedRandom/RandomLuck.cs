@@ -12,13 +12,13 @@ namespace AdvancedRandom
         public float Luck
         {
             get => _luck;
-            private set => _luck = new MathUtils().Clamp(value, _minLuck, _maxLuck);
+            private set => _luck = MathFUtils.Clamp(value, _minLuck, _maxLuck);
         }
 
         public float ExtraLuck
         {
             get => _extraLuck;
-            private set => _extraLuck = new MathUtils().Clamp(value, -1.0f, 1.0f);
+            private set => _extraLuck = MathFUtils.Clamp(value, -1.0f, 1.0f);
         }
         
         private readonly Random _random;

@@ -95,8 +95,8 @@ public class Tests
     [Test]
     public void Test_ChoicePositive()
     {
-        var simpleSequence = GetSimpleRandomSequenceChoice(new List<string>() {"Test1", "Test2", "Test3"}, RandomSequenceCount);
-        var advancedSequence = GetAdvancedRandomSequenceChoicePositive(new List<string>() {"Test1", "Test2", "Test3"}, RandomSequenceCount);
+        var simpleSequence = GetSimpleRandomSequenceChoice(new List<string> {"Test1", "Test2", "Test3"}, RandomSequenceCount);
+        var advancedSequence = GetAdvancedRandomSequenceChoicePositive(new List<string> {"Test1", "Test2", "Test3"}, RandomSequenceCount);
         Show(simpleSequence, advancedSequence);
         Assert.Pass();
     }
@@ -104,8 +104,8 @@ public class Tests
     [Test]
     public void Test_ChoiceNegative()
     {
-        var simpleSequence = GetSimpleRandomSequenceChoice(new List<string>() {"Test1", "Test2", "Test3"}, RandomSequenceCount);
-        var advancedSequence = GetAdvancedRandomSequenceChoiceNegative(new List<string>() {"Test1", "Test2", "Test3"}, RandomSequenceCount);
+        var simpleSequence = GetSimpleRandomSequenceChoice(new List<string> {"Test1", "Test2", "Test3"}, RandomSequenceCount);
+        var advancedSequence = GetAdvancedRandomSequenceChoiceNegative(new List<string> {"Test1", "Test2", "Test3"}, RandomSequenceCount);
         Show(simpleSequence, advancedSequence);
         Assert.Pass();
     }
@@ -113,8 +113,8 @@ public class Tests
     [Test]
     public void Test_ChoiceChancePositive()
     {
-        var simpleSequence = GetSimpleRandomSequenceChoiceChance(new List<string>() {"Test1", "Test2", "Test3"}, new List<int>() {1, 5, 10}, RandomSequenceCount);
-        var advancedSequence = GetAdvancedRandomSequenceChoiceChancePositive(new List<string>() {"Test1", "Test2", "Test3"}, new List<int>() {1, 5, 10}, RandomSequenceCount);
+        var simpleSequence = GetSimpleRandomSequenceChoiceChance(new List<string> {"Test1", "Test2", "Test3"}, new List<int> {1, 5, 10}, RandomSequenceCount);
+        var advancedSequence = GetAdvancedRandomSequenceChoiceChancePositive(new List<string> {"Test1", "Test2", "Test3"}, new List<int> {1, 5, 10}, RandomSequenceCount);
         Show(simpleSequence, advancedSequence);
         Assert.Pass();
     }
@@ -122,8 +122,8 @@ public class Tests
     [Test]
     public void Test_ChoiceChanceNegative()
     {
-        var simpleSequence = GetSimpleRandomSequenceChoiceChance(new List<string>() {"Test1", "Test2", "Test3"}, new List<int>() {1, 5, 10}, RandomSequenceCount);
-        var advancedSequence = GetAdvancedRandomSequenceChoiceChanceNegative(new List<string>() {"Test1", "Test2", "Test3"}, new List<int>() {1, 5, 10}, RandomSequenceCount);
+        var simpleSequence = GetSimpleRandomSequenceChoiceChance(new List<string> {"Test1", "Test2", "Test3"}, new List<int> {1, 5, 10}, RandomSequenceCount);
+        var advancedSequence = GetAdvancedRandomSequenceChoiceChanceNegative(new List<string> {"Test1", "Test2", "Test3"}, new List<int> {1, 5, 10}, RandomSequenceCount);
         Show(simpleSequence, advancedSequence);
         Assert.Pass();
     }

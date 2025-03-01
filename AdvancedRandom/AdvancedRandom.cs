@@ -1,4 +1,12 @@
-﻿using System;
+﻿// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedType.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+
+#pragma warning disable S3776 // Cognitive Complexity of methods should not be too high
+#pragma warning disable S1066 // Mergeable "if" statements should be combined
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using AdvancedRandom.Utils;
@@ -17,7 +25,7 @@ namespace AdvancedRandom
         {
             Seed = seed;
             _randomLuck = new RandomLuck(seed, luck);
-            LuckWeight = new MathUtils().Clamp(luckWeight, 0.0f, 1.0f);
+            LuckWeight = MathFUtils.Clamp(luckWeight, 0.0f, 1.0f);
         }
         
         public float Seed { get; }
@@ -251,6 +259,11 @@ namespace AdvancedRandom
             return ChoiceFromNegativeToPositive(list);
         }
         
+        public T Choice<T>(List<T> list, List<int> chances)
+        {
+            return ChoiceFromNegativeToPositive(list, chances);
+        }
+        
         public T ChoiceFromNegativeToPositive<T>(List<T> list)
         {
             if (list.Count == 0)
@@ -260,22 +273,6 @@ namespace AdvancedRandom
             
             var index = NextFromNegativeToPositive(0, list.Count);
             return list[index];
-        }
-        
-        public T ChoiceFromPositiveToNegative<T>(List<T> list)
-        {
-            if (list.Count == 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(list), "List is empty.");
-            }
-            
-            var index = NextFromPositiveToNegative(0, list.Count);
-            return list[index];
-        }
-        
-        public T Choice<T>(List<T> list, List<int> chances)
-        {
-            return ChoiceFromNegativeToPositive(list, chances);
         }
         
         public T ChoiceFromNegativeToPositive<T>(List<T> list, List<int> chances)
@@ -295,6 +292,17 @@ namespace AdvancedRandom
             var value = NextFromNegativeToPositive(0, totalChances);
             var chanceIndex = chancesSumList.FindIndex(ch => ch > value);
             return list[chanceIndex];
+        }
+        
+        public T ChoiceFromPositiveToNegative<T>(List<T> list)
+        {
+            if (list.Count == 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(list), "List is empty.");
+            }
+            
+            var index = NextFromPositiveToNegative(0, list.Count);
+            return list[index];
         }
         
         public T ChoiceFromPositiveToNegative<T>(List<T> list, List<int> chances)
